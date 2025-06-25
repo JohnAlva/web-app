@@ -45,10 +45,16 @@
           [withTitle]="'40%'"
         >
         </mifosx-gl-account-display>
-      </div>
+        <mifosx-gl-account-display
+          class="flex-100"
+          [accountTitle]="'Interest Receivable'"
+          *ngIf="isAccrualAccounting()"
+          [glAccount]="accountingMappings.interestReceivableAccount"
+          [withTitle]="'40%'"
+        >
+        </mifosx-gl-account-display>
 
-      <h4 class="mat-h4 flex-100">{{ 'labels.heading.Liabilities' | translate }}</h4>
-      <div class="flex-100 layout-row-wrap responsive-column">
+        <h4 fxFlexFill class="mat-h4">{{ 'labels.heading.Liabilities' | translate }}</h4>
         <mifosx-gl-account-display
           class="flex-100"
           [accountTitle]="'Saving control'"

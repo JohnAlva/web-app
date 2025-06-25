@@ -1,7 +1,12 @@
 <form [formGroup]="savingProductAccountingForm">
-  <div class="layout-row-wrap custom-gap responsive-column">
+  <div fxLayout="row wrap" fxLayoutGap="2%" fxLayout.lt-md="column">
     <mat-radio-group
-      class="flex-98 layout-row gap-5percent layout-column.lt-md radio-group-spacing"
+      fxFlex="98%"
+      fxLayout="row"
+      fxLayoutGap="5%"
+      fxLayout.lt-md="column"
+      More
+      actions
       formControlName="accountingRule"
     >
       <mat-radio-button *ngFor="let accountingRule of accountingRuleData; let i = index" [value]="i + 1">
@@ -49,6 +54,16 @@
         [glAccountList]="assetAccountData"
         [required]="true"
         [inputLabel]="'Penalties Receivable'"
+      >
+      </mifosx-gl-account-selector>
+
+      <mifosx-gl-account-selector
+        class="flex-48"
+        *ngIf="isAccrualAccounting()"
+        [inputFormControl]="savingProductAccountingForm.controls.interestReceivableAccountId"
+        [glAccountList]="assetAccountData"
+        [required]="true"
+        [inputLabel]="'Interest Receivable'"
       >
       </mifosx-gl-account-selector>
 
