@@ -319,15 +319,14 @@ export class AuditTrailsComponent implements OnInit, AfterViewInit {
    * Initializes the data source for audit trails table and loads the first page.
    */
   getAuditTrails() {
-    this.dataSource = new AuditTrailsDataSource(this.systemService);
-    this.dataSource.getAuditTrails(
-      this.filterAuditTrailsBy,
-      this.sort.active,
-      this.sort.direction,
-      this.paginator.pageIndex,
-      this.paginator.pageSize
-    );
-    console.log(this.dataSource);
+    this.isLoading = true;
+    const isActive: string = this.sort ? this.sort.active : '';
+    const direction: string = this.sort ? this.sort.direction : '';
+    const pageIndex: number = this.paginator ? this.paginator.pageIndex : 0;
+    const pageSize: any = this.paginator ? this.paginator.pageSize : 20;
+
+    this.dataSource.getAuditTrails(this.filterAuditTrailsBy, isActive, direction, pageIndex, pageSize);
+    this.isLoading = false;
   }
 
   /**
@@ -337,14 +336,7 @@ export class AuditTrailsComponent implements OnInit, AfterViewInit {
     if (!this.sort.direction) {
       delete this.sort.active;
     }
-    this.dataSource.getAuditTrails(
-      this.filterAuditTrailsBy,
-      this.sort.active,
-      this.sort.direction,
-      this.paginator.pageIndex,
-      this.paginator.pageSize
-    );
-    console.log(this.dataSource);
+    this.getAuditTrails();
   }
 
   /**
