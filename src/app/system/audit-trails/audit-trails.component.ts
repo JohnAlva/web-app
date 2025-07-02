@@ -331,7 +331,6 @@ export class AuditTrailsComponent implements OnInit, AfterViewInit {
 
   /**
    * Loads a page of audit trails.
-   * 
    */
   loadAuditTrailsPage() {
     if (!this.sort.direction) {
