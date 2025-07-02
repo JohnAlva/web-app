@@ -3389,6 +3389,7 @@
     "Interest effective from date": "Procenti spēkā no datuma",
     "Interest rate is posted or credited to a saving account": "Periods, kurā procentu likme tiek iegrāmatota vai ieskaitīta krājkontā",
     "Interest rate mentioned is added to base lending rate": "Ja atzīmēta, norādītā procentu likme tiek pievienota aizdevuma pamatlikmei no šī perioda datuma, absolūtā pretējā gadījumā",
+    "Interest Receivable": "Saņemamie procenti",
     "Keyboard Shortcuts": "Tastatūras īsinājumtaustiņi",
     "Leave this checkbox checked if the loan has Down Payment": "Atstājiet šo izvēles rūtiņu atzīmētu, ja aizdevumam ir pirmā iemaksa. Pirmā iemaksa ir summa, ko pircējs maksā avansā, pērkot preci. Tā ir procentuālā daļa no kopējās pirkuma cenas, un atlikums parasti tiek finansēts",
     "Leave this checkbox unchecked": "Ja aizdevums ir vienas izmaksas aizdevums, atstājiet šo izvēles rūtiņu neatzīmētu. Atzīmējiet šo izvēles rūtiņu, ja aizdevums ir vairāku izmaksu aizdevums. Skatiet papildu laukus, lai iegūtu papildu informāciju, kas nepieciešama šāda veida aizdevumam.",
