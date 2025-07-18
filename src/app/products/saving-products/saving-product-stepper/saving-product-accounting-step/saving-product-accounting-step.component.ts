@@ -70,6 +70,7 @@ export class SavingProductAccountingStepComponent implements OnInit {
   @Input() accountingRuleData: any;
   @Input() isDormancyTrackingActive: UntypedFormControl;
   @Input() savingProductFormValid: boolean;
+  @Input() allowOverdraft: UntypedFormControl;
 
   savingProductAccountingForm: UntypedFormGroup;
 
@@ -256,10 +257,22 @@ export class SavingProductAccountingStepComponent implements OnInit {
             'penaltiesReceivableAccountId',
             new UntypedFormControl('', Validators.required)
           );
-          this.savingProductAccountingForm.addControl(
-            'interestReceivableAccountId',
-            new UntypedFormControl('', Validators.required)
-          );
+          if (this.allowOverdraft.value) {
+            this.savingProductAccountingForm.addControl(
+              'interestReceivableAccountId',
+              new UntypedFormControl('', Validators.required)
+            );
+          }
+          this.allowOverdraft.valueChanges.subscribe((allowOverdraft: boolean) => {
+            if (allowOverdraft) {
+              this.savingProductAccountingForm.addControl(
+                'interestReceivableAccountId',
+                new UntypedFormControl('', Validators.required)
+              );
+            } else {
+              this.savingProductAccountingForm.removeControl('interestReceivableAccountId');
+            }
+          });
           this.savingProductAccountingForm.addControl(
             'interestPayableAccountId',
             new UntypedFormControl('', Validators.required)
