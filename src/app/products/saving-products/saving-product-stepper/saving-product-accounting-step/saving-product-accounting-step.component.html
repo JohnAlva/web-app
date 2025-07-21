@@ -57,7 +57,7 @@
         *ngIf="isAccrualAccounting() && allowOverdraft.value"
         [inputFormControl]="savingProductAccountingForm.controls.interestReceivableAccountId"
         [glAccountList]="assetAccountData"
-        [required]="true"
+        [required]="false"
         [inputLabel]="'Interest Receivable'"
       >
       </mifosx-gl-account-selector>

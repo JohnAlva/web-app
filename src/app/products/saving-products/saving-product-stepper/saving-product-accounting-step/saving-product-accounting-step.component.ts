@@ -258,17 +258,11 @@ export class SavingProductAccountingStepComponent implements OnInit {
             new UntypedFormControl('', Validators.required)
           );
           if (this.allowOverdraft.value) {
-            this.savingProductAccountingForm.addControl(
-              'interestReceivableAccountId',
-              new UntypedFormControl('', Validators.required)
-            );
+            this.savingProductAccountingForm.addControl('interestReceivableAccountId', new UntypedFormControl(''));
           }
           this.allowOverdraft.valueChanges.subscribe((allowOverdraft: boolean) => {
             if (allowOverdraft) {
-              this.savingProductAccountingForm.addControl(
-                'interestReceivableAccountId',
-                new UntypedFormControl('', Validators.required)
-              );
+              this.savingProductAccountingForm.addControl('interestReceivableAccountId', new UntypedFormControl(''));
             } else {
               this.savingProductAccountingForm.removeControl('interestReceivableAccountId');
             }
